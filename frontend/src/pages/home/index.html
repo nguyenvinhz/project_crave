@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trang Chủ - Crave Food</title>
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <main class="home-page">
+        <div class="home-wrap">
+            <section class="hero" aria-label="Giới thiệu dịch vụ">
+                <div class="hero-copy">
+                    <p class="eyebrow">Bữa ăn tiếp theo của bạn</p>
+                    <h1>
+                        Đồ ăn ngon,
+                        <span>giao tận tay bạn.</span>
+                    </h1>
+                    <p class="hero-text">
+                        Khám phá các món ăn và đồ uống yêu thích của bạn và đặt chúng chỉ với vài cú nhấp chuột.
+                    </p>
+
+                    <form class="order-search">
+                        <label class="search-field">
+                            <span class="search-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Tìm kiếm món ăn</span>
+                            <input type="text" placeholder="Bạn đang thèm gì?" />
+                        </label>
+
+                        <div class="location-pill">
+                            <span class="pin-icon" aria-hidden="true"></span>
+                            <span>Trung tâm</span>
+                        </div>
+
+                        <button type="button">Đặt ngay</button>
+                    </form>
+                </div>
+
+                <div class="hero-image">
+                    <img id="hero-img" src="../../assets/hero.png" alt="Món ngon Crave" />
+                </div>
+            </section>
+
+            <section class="section-block">
+                <div class="section-heading">
+                    <h2>Khám phá theo danh mục</h2>
+                    <a href="#">Xem tất cả danh mục</a>
+                </div>
+
+                <div class="category-grid" id="category-grid" aria-live="polite"></div>
+            </section>
+
+            <section class="section-block popular-block">
+                <div class="section-heading">
+                    <h2>Món ngon gần bạn</h2>
+                </div>
+
+                <div class="popular-grid" id="popular-grid" aria-live="polite"></div>
+            </section>
+
+            <section class="promo">
+                <div>
+                    <p>Lần đầu đến với Crave?</p>
+                    <h2>GIẢM 20% ĐƠN HÀNG ĐẦU TIÊN</h2>
+                    <span>
+                        Nhập mã <strong>FIRSTBITE</strong> khi thanh toán. Món ngon đang chờ bạn.
+                    </span>
+                </div>
+                <button type="button">Đặt ngay</button>
+            </section>
+
+            <section class="benefit-grid" aria-label="Ưu đãi từ Crave">
+                <article class="benefit-card">
+                    <span class="benefit-icon benefit-icon-truck" aria-hidden="true"></span>
+                    <div>
+                        <h3>Giao hàng nhanh chóng</h3>
+                        <p>Nóng hổi và tươi ngon tận cửa nhà bạn.</p>
+                    </div>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon benefit-icon-heart" aria-hidden="true"></span>
+                    <div>
+                        <h3>Đồ ăn tươi ngon</h3>
+                        <p>Tuyển chọn từ những quán ăn bạn yêu thích.</p>
+                    </div>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon benefit-icon-shield" aria-hidden="true"></span>
+                    <div>
+                        <h3>Thanh toán an toàn</h3>
+                        <p>Mọi giao dịch đều được bảo vệ tối đa.</p>
+                    </div>
+                </article>
+
+                <article class="benefit-card">
+                    <span class="benefit-icon benefit-icon-headset" aria-hidden="true"></span>
+                    <div>
+                        <h3>Hỗ trợ 24/7</h3>
+                        <p>Đội ngũ tận tâm, sẵn sàng hỗ trợ bạn.</p>
+                    </div>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <script type="module" src="./js/home.js"></script>
+</body>
+
+</html>
