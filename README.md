@@ -277,6 +277,10 @@ Toàn bộ quy trình phát triển được phân chia thành **16 branch** (b�
 | **7** | **Hồ sơ cá nhân (`/profile`)** | `backend/profile` | `frontend/profile` | **FE:** Quản lý thông tin tài khoản, danh sách sổ địa chỉ giao hàng, lịch sử các đơn hàng đã đặt.<br>**BE:** API thông tin khách hàng (`/api/customers/*`), sổ địa chỉ (`/api/addresses/*`). |
 | **8** | **Xác thực (`/login`, `/register`)** | `backend/auth` | `frontend/auth` | **FE:** Giao diện đăng nhập, đăng ký, validate dữ liệu form, lưu trữ phiên đăng nhập.<br>**BE:** API đăng ký, đăng nhập, mã hóa mật khẩu, phân quyền truy cập. |
 
+> 📖 **Tài liệu hướng dẫn chi tiết**:
+> - Xem bảng phân bổ nhiệm vụ cụ thể cho từng thành viên tại: [docs/phan-cong-nhiem-vu.md](docs/phan-cong-nhiem-vu.md)
+> - Xem quy chuẩn đặt tên nhánh, commit và quy trình làm việc tại: [docs/git-convention.md](docs/git-convention.md)
+
 ---
 
 ## 📄 Bản Quyền & Giấy Phép
