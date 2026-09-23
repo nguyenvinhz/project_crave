@@ -13,6 +13,7 @@
 6. [Danh Mục RESTful API](#-danh-mục-restful-api)
 7. [Hướng Dẫn Cài Đặt & Chạy Dự Án](#-hướng-dẫn-cài-đặt--chạy-dự-án)
 8. [Phân Quyền & Vai Trò Hệ Thống](#-phân-quyền--vai-trò-hệ-thống)
+9. [Chiến Lược Phân Chia Branch Git (Thiết Kế Framer)](#-chiến-lược-phân-chia-branch-git-thiết-kế-framer)
 
 ---
 
@@ -256,6 +257,25 @@ File đóng gói `.war` sẽ được tạo ra tại thư mục `target/project-
 | **`NhanVienXuLyDonHang`** | Tiếp nhận đơn mới, xác nhận, cập nhật đơn sang chuẩn bị, bàn giao đơn cho giao hàng |
 | **`NhanVienQuanLiKhuyenMai`** | Tạo và cấu hình các chương trình ưu đãi, mã giảm giá, thời gian áp dụng |
 | **`NhanVienQuanLiNhanSu`** | Quản lý hồ sơ nhân viên, ngày vào làm, phân ca và trạng thái làm việc |
+
+---
+
+## 🌿 Chiến Lược Phân Chia Branch Git (Thiết Kế Framer)
+
+Hệ thống được xây dựng bám sát theo nguyên mẫu thiết kế UI/UX trên **[Framer - Thrilled Calendar](https://framer.com/projects/Thrilled-Calendar--1sSWDnYbE1G1X1kvJXe0-9VSP3)**. 
+
+Toàn bộ quy trình phát triển được phân chia thành **16 branch** (bội số của 4, gồm **8 branch Backend** và **8 branch Frontend**) tương ứng 1-1 với từng màn hình và luồng xử lý dữ liệu:
+
+| STT | Trang / Module trên Framer | 🖥️ Branch Backend (8) | 🎨 Branch Frontend (8) | Mô Tả Trách Nhiệm Phân Hệ |
+| :-: | :--- | :--- | :--- | :--- |
+| **1** | **Trang chủ (`Home`)** | `backend/home` | `frontend/home` | **FE:** Hero banner *"Delicious food, delivered to you"*, ô tìm kiếm món, *"Browse by craving"*, *"Popular near you"*, CTA banner cam.<br>**BE:** API lấy món thịnh hành, danh mục cravings. |
+| **2** | **Nhà hàng (`/restaurants`)** | `backend/restaurants` | `frontend/restaurants` | **FE:** Danh sách cửa hàng/nhà hàng đối tác, bộ lọc danh mục/khu vực, đánh giá sao.<br>**BE:** API quản lý thông tin nhà hàng, đối tác và địa điểm. |
+| **3** | **Chi tiết món (`/food`)** | `backend/food` | `frontend/food` | **FE:** Thực đơn món, modal tùy chọn (Size, Topping, Đường, Đá), nút thêm vào giỏ hàng.<br>**BE:** API danh mục món, chi tiết món ăn và danh sách tùy chọn (`TuyChonMon`). |
+| **4** | **Giỏ hàng (`/cart`)** | `backend/cart` | `frontend/cart` | **FE:** Danh sách món trong giỏ, tăng/giảm số lượng, xóa món, áp dụng voucher khuyến mãi, tính tạm tính.<br>**BE:** API CRUD giỏ hàng (`/api/cart/*`) và kiểm tra điều kiện áp dụng mã giảm giá. |
+| **5** | **Thanh toán (`/checkout`)** | `backend/checkout` | `frontend/checkout` | **FE:** Chọn/nhập địa chỉ giao hàng (giao tận nơi/tự đến lấy), phương thức thanh toán, tóm tắt đơn hàng.<br>**BE:** API tạo đơn hàng mới (`/api/orders`), tính phí vận chuyển và tổng tiền. |
+| **6** | **Theo dõi đơn (`/tracking`)** | `backend/tracking` | `frontend/tracking` | **FE:** Stepper trực quan tiến trình đơn (*Chờ xác nhận ➔ Chuẩn bị ➔ Đang giao ➔ Hoàn tất*), thời gian giao dự kiến.<br>**BE:** API cập nhật và truy xuất lịch sử trạng thái đơn hàng (`LichSuTrangThaiDonHang`). |
+| **7** | **Hồ sơ cá nhân (`/profile`)** | `backend/profile` | `frontend/profile` | **FE:** Quản lý thông tin tài khoản, danh sách sổ địa chỉ giao hàng, lịch sử các đơn hàng đã đặt.<br>**BE:** API thông tin khách hàng (`/api/customers/*`), sổ địa chỉ (`/api/addresses/*`). |
+| **8** | **Xác thực (`/login`, `/register`)** | `backend/auth` | `frontend/auth` | **FE:** Giao diện đăng nhập, đăng ký, validate dữ liệu form, lưu trữ phiên đăng nhập.<br>**BE:** API đăng ký, đăng nhập, mã hóa mật khẩu, phân quyền truy cập. |
 
 ---
 
