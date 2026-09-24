@@ -5,6 +5,18 @@
              version="3.1">
     <persistence-unit name="QuanLyDatDoAnPU" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <class>com.crave.entity.Customer</class>
+        <class>com.crave.entity.Staff</class>
+        <class>com.crave.entity.Category</class>
+        <class>com.crave.entity.Food</class>
+        <class>com.crave.entity.FoodOption</class>
+        <class>com.crave.entity.ShippingAddress</class>
+        <class>com.crave.entity.Promotion</class>
+        <class>com.crave.entity.Cart</class>
+        <class>com.crave.entity.CartItem</class>
+        <class>com.crave.entity.FoodOrder</class>
+        <class>com.crave.entity.OrderItem</class>
+        <class>com.crave.entity.OrderStatusHistory</class>
         <properties>
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="hibernate.connection.provider_class" value="org.hibernate.hikaricp.internal.HikariCPConnectionProvider"/>

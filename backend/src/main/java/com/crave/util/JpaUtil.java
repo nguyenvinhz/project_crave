@@ -13,13 +13,21 @@ public final class JpaUtil {
         entityManagerFactory = Persistence.createEntityManagerFactory("QuanLyDatDoAnPU");
     }
 
-    public static EntityManagerFactory getEntityManagerFactory() {
+    public static synchronized EntityManagerFactory getEntityManagerFactory() {
+        if (entityManagerFactory == null || !entityManagerFactory.isOpen()) {
+            init();
+        }
         return entityManagerFactory;
     }
 
-    public static void close() {
+    public static jakarta.persistence.EntityManager createEntityManager() {
+        return getEntityManagerFactory().createEntityManager();
+    }
+
+    public static synchronized void close() {
         if (entityManagerFactory != null && entityManagerFactory.isOpen()) {
             entityManagerFactory.close();
+            entityManagerFactory = null;
         }
     }
 }
